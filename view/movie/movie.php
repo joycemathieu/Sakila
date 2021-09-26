@@ -1,9 +1,15 @@
 <?php
-$movies = new movie($film_id = '', $title = '', $descritpion = '', $release_year = '', $language_id = '', $original_language_id = '', $rental_duration = '', $length = '', $replacement_cost = '', $special_features = '', $last_update = '');
+$movies = new movie();
 $movies->findAll();
 
 ?>
 <div class="container">
+    <form class="col-4 m-auto mt-2" action="index.php?page=moviesSearch" method="POST">
+        <div class="input-group mb-3">
+            <input name="search" type="text" class="form-control" placeholder="Titre du film" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input class="btn btn-primary" type="submit"></input>
+        </div>
+    </form>
     <div class="row m-1">
         <?php foreach ($movies->findAll() as $movie) : ?>
             <div class="card col-4 p-2 m-0">

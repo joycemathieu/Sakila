@@ -142,45 +142,42 @@ class movie extends Database
 
     public function findbyCategories($category_id)
     {
-        $data = parent::getAll('SELECT * FROM film 
+        $response = parent::getAll('SELECT * FROM film 
         LEFT JOIN film_category as cat on film.film_id = cat.film_id
         LEFT JOIN category on category.category_id = cat.category_id
         WHERE category.category_id =' . $category_id);
-        return $data;
+        return $response;
     }
 
     public function findbyActors($actor_id)
     {
-        $data = parent::getAll('SELECT * FROM film 
+        $response = parent::getAll('SELECT * FROM film 
         LEFT JOIN film_actor as fact on film.film_id = fact.film_id
         LEFT JOIN actor on actor.actor_id = fact.actor_id
         WHERE actor.actor_id =' . $actor_id);
-        return $data;
+        return $response;
     }
 
     public function findAll()
     {
-        $data = parent::getAll('SELECT * FROM film');
-        return $data;
+        $response = parent::getAll('SELECT * FROM film');
+        return $response;
     }
 
     public function findOne($film_id)
     {
         $film_id = $_GET['film_id'];
-        $result = parent::getOne('SELECT * FROM film WHERE film_id =' . $film_id);
-        return $result;
+        $response = parent::getOne('SELECT * FROM film WHERE film_id =' . $film_id);
+        return $response;
     }
 
 
-    public  function search()
+    public  function search($search)
     {
-        $films = [];
-        if (!empty($_POST)) {
-            $bdd = parent::connect();
-            $response = $bdd->prepare("SELECT * FROM film WHERE title LIKE title");
-            $response->execute(['title' => '%' . $_GET['title'] . '%',]);
-            $films = $response->fetchAll(PDO::FETCH_ASSOC);
-            return $films;
-        }
+        $bd = parent::connect();
+        $res = $bd->query('SELECT * FROM film WHERE title LIKE "%' . $search . '%"');
+        $res->execute();
+        $movies = $res->fetchAll(PDO::FETCH_ASSOC);
+        return $movies;
     }
 }

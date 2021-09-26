@@ -24,8 +24,8 @@ if ($page === 'home') {
     require './view/movie/moviesByCat.php';
 } elseif ($page === 'moviesByActor') {
     require './view/movie/moviesByActor.php';
-} elseif ($page === 'searchMovie') {
-    require './view/movie/searchMovie.php';
+} elseif ($page === 'moviesSearch') {
+    require './view/movie/moviesSearch.php';
 } elseif ($page === 'customer') {
     require './view/customer.php';
 }
