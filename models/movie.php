@@ -174,10 +174,7 @@ class movie extends Database
 
     public  function search($search)
     {
-        $bd = parent::connect();
-        $res = $bd->query('SELECT * FROM film WHERE title LIKE "%' . $search . '%"');
-        $res->execute();
-        $movies = $res->fetchAll(PDO::FETCH_ASSOC);
+        $movies = parent::getAll('SELECT * FROM film WHERE title LIKE "%' . $search . '%"');
         return $movies;
     }
 }

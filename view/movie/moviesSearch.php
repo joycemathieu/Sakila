@@ -1,7 +1,10 @@
 <?php if (isset($_POST['search'])) :
-    $search = $_POST['search'];
+    $search = htmlspecialchars($_POST['search']);
     $movies = new movie();
     $movies->search($search);
+    //print '<pre>';
+    //var_dump($movies);
+    //print '</pre>';
 ?>
     <div class="container">
         <div class="row m-1">
@@ -26,6 +29,7 @@
                     </div>
                 </div>
             <?php endforeach; ?>
+            <a class="btn btn-warning btn-lg col-4" href="index.php?page=movie" role="button">Retourner aux films</a>
         </div>
     </div>
 <?php endif; ?>

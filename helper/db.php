@@ -39,9 +39,4 @@ class Database
     $req = $this->connect()->query($stmt)->fetch(PDO::FETCH_OBJ);
     return $req;
   }
-
-  public function query($sql)
-  {
-    return $this->connect()->prepare($sql);
-  }
 }
