@@ -7,7 +7,7 @@ $movies->findAll();
     <form class="col-4 m-auto mt-2" action="index.php?page=moviesSearch" method="POST">
         <div class="input-group mb-3">
             <input name="search" type="text" class="form-control" placeholder="Titre du film" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <input class="btn btn-primary" type="submit"></input>
+            <input class="btn btn-primary" type="submit" value="rechercher"></input>
         </div>
     </form>
     <div class="row m-1">
