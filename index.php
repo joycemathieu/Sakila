@@ -27,7 +27,9 @@ if ($page === 'home') {
 } elseif ($page === 'moviesSearch') {
     require './view/movie/moviesSearch.php';
 } elseif ($page === 'customer') {
-    require './view/customer.php';
+    require './view/customer/customer.php';
+} elseif ($page === 'customersSearch') {
+    require './view/customer/customersSearch.php';
 }
 
 $content = ob_get_clean();

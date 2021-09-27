@@ -67,7 +67,13 @@ class customer extends Database
 
     public  function findAll()
     {
-        $data = Database::getAll('SELECT * FROM customer WHERE active = 1');
-        return $data;
+        $response = Database::getAll('SELECT * FROM customer WHERE active = 1');
+        return $response;
+    }
+
+    public  function search($search)
+    {
+        $customers = parent::getAll('SELECT * FROM customer WHERE email LIKE "%' . $search . '%"');
+        return $customers;
     }
 }
