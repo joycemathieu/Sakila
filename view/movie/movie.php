@@ -22,11 +22,11 @@ $movies->findAll();
                     <li class="list-group-item">Année de sortie : <?= $movie->release_year ?></li>
                 </ul>
                 <div class="card-body text-end">
-                    <form action="" method='POST'>
+                    <form action="index.php?page=rental" method='POST'>
                         <?php if (empty($movie->rental_date)) : ?>
-                            <button class="btn btn-success float-right">Louer ce film</button>
+                            <input name="rent" class="btn btn-success" type="submit" value="Louer"></input>
                         <?php else : ?>
-                            <button class="btn btn-warning float-right">Rendre ce film</button>
+                            <input name="return" class="btn btn-warning" type="submit" value="Rendre"></input>
                         <?php endif; ?>
                     </form>
                 </div>

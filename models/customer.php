@@ -67,7 +67,7 @@ class customer extends Database
 
     public  function findAll()
     {
-        $response = Database::getAll('SELECT * FROM customer WHERE active = 1');
+        $response = Database::getAll('SELECT * FROM customer WHERE active = 1 order by last_name');
         return $response;
     }
 

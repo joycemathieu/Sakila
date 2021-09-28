@@ -15,7 +15,11 @@ ob_start();
 if ($page === 'home') {
     require './view/home.php';
 } elseif ($page === 'actor') {
-    require './view/actor.php';
+    require './view/actor/actor.php';
+} elseif ($page === 'rental') {
+    require './view/rental/rental.php';
+} elseif ($page === 'rentalSending') {
+    require './view/rental/rentalSending.php';
 } elseif ($page === 'category') {
     require './view/category.php';
 } elseif ($page === 'movie') {

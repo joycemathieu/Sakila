@@ -26,7 +26,7 @@ if (isset($_GET['category_id'])) : {
                             <li class="list-group-item">Année de sortie : <?= $movie->release_year ?></li>
                         </ul>
                         <div class="card-body text-end">
-                            <form action="" method='POST'>
+                            <form action="index.php?page=rental" method='POST'>
                                 <?php if (empty($movie->rental_date)) : ?>
                                     <button class="btn btn-success float-right">Louer ce film</button>
                                 <?php else : ?>

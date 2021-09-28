@@ -1,7 +1,5 @@
 <?php
 
-
-
 class rental extends Database
 {
 
@@ -14,11 +12,6 @@ class rental extends Database
 
     protected $_last_update;
 
-    public function __construct($rental_id, $customer_id)
-    {
-        $this->setrental($rental_id);
-        $this->setCustomer($customer_id);
-    }
 
     public function setrental($rental_id)
     {
@@ -65,11 +58,11 @@ class rental extends Database
     }
 
 
-    public  function findAll()
+    public function findAll()
     {
-        $data = Database::getAll('SELECT r.rental_id,c.first_name,c.last_name FROM rental as r
+        $response = Database::getAll('SELECT r.rental_id,c.first_name,c.last_name FROM rental as r
         left join customer as c
         on r.rental_id = c.customer_id');
-        return $data;
+        return $response;
     }
 }

@@ -16,7 +16,7 @@ $customers->findAll();
         <?php foreach ($customers->findAll() as $customer) : ?>
             <div class="card col-4 p-2">
                 <div class="card-body">
-                    <h4 class="card-title"><?= $customer->first_name ?> <?= $customer->last_name ?></h4>
+                    <h4 class="card-title"><?= $customer->last_name ?> <?= $customer->first_name ?></h4>
                     <h6 class="card-subtitle mb-2 text-muted"><?= $customer->email ?></h6>
                 </div>
             </div>

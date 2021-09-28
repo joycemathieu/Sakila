@@ -16,8 +16,7 @@ J'ai décidé de séparer les vues des models pour avoir des "managers" même si
 
 ### Difficultés
 ***
-La base de donné est très longue en compréhension.
-Je n'ai pas fait la partie création, modification, suppression car j'ai encore des difficultés avec les managers.
+La base de donné est très longue en compréhension, de plus il y a beaucoup de foreign key ce qui m'a empéché de faire la partie location et rendu de DVD.
 
 
 ### Installation
